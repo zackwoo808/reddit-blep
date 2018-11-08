@@ -1,14 +1,42 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: rgb(101, 201, 168);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.blep {
+	background-color: rgb(101, 201, 168);
 }
+
+#listItem {
+	list-style: none;
+}
+
+.App ul {
+	padding: 0;
+}
+
+.photos {
+	float: left;
+	position: fixed;
+}
+
+.photoDescription {
+	margin: 0;
+}
+
+.prompt {
+	font-size: 10;
+}
+
+.subredditButton {
+	display: inline-block;
+	width: 45px;
+}
+
+.subredditHeader {
+	display: inline-block;
+	color: yellow;
+}
+
+
