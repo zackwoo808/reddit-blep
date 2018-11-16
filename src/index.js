@@ -1,21 +1,9 @@
+import axios from "axios";
+import Button from './Button.js';
+import Post from './Post.js';
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import axios from "axios";
-import DocumentTitle from 'react-document-title';
-
-function Button(props) {
-  return(
-    <span>
-      <button
-        onClick={() => props.onClick()}
-        className="subredditButton"
-      >
-        {props.value}
-      </button>
-    </span>
-  );
-}
 
 // ================================================================
 
@@ -35,7 +23,6 @@ class Reddit extends React.Component {
     });
   };
 
-  
   handleClick(subreddit) {
     if (subreddit) {
       axios.get(`https://www.reddit.com/r/${subreddit}.json`).then(res => {
@@ -50,47 +37,44 @@ class Reddit extends React.Component {
   
   render() {
     return (
-      <DocumentTitle title={this.state.currentSubreddit}>
-        <div className="App">
-          <div className="photos">
-            <img 
-              src={require('./images/woodsy.jpeg')}
-              alt="Woodsy"
-              height="150"
-              width="200"
-              className="photo"
-            />
-            <p className="photoDescription">Woodsy is not pleased</p>
-          </div>
-          <div>
-            <h1>
-              /r/bl<div className='subredditHeader'>{this.state.currentSubreddit.charAt(2)}</div>p
-            </h1>
-          </div>
-          <div>
-            <Button onClick={() => this.handleClick('blep')} value='blep' />
-            <Button onClick={() => this.handleClick('blop')} value='blop' />
-            <Button onClick={() => this.handleClick('blup')} value='blup' />
-          </div>
-          <div>
-            <ul>
-              {this.state.posts.map(post => (
-                <li id="listItem" key={post.id}>
-                  <p>
-                    <a
-                      href={post.url}
-                      rel="noopener noreferrer"
-                      target="_blank">{post.title}
-                    </a>
-                    <br />
-                    by <b>{post.author}</b>
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="App">
+        <div>
+          <h1>
+            /r/bl<div className='subredditHeader'>{this.state.currentSubreddit.charAt(2)}</div>p
+          </h1>
         </div>
-      </DocumentTitle>
+        <div>
+          <Button onClick={() => this.handleClick('blep')} value='blep' />
+          <Button onClick={() => this.handleClick('blop')} value='blop' />
+          <Button onClick={() => this.handleClick('blup')} value='blup' />
+        </div>
+        <div>
+          <ul>
+            {this.state.currentSubreddit === "blep" ?
+              <li id="listItem">
+                  <img 
+                    src={require('./images/woodsy.jpeg')}
+                    alt="Woodsy"
+                    height="150"
+                    width="200"
+                    className="photo"
+                  />
+                  <p className="photoDescription"><b>Blep do not please Woodsy</b></p>
+              </li>
+              : null
+            }
+            {this.state.posts.map(post => (
+              <li id="listItem" key={post.id}>
+                <Post
+                  postUrl={post.url}
+                  postAuthor={post.author}
+                  postTitle={post.title}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     );
   }
 }

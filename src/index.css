@@ -16,22 +16,30 @@ html {
 	padding: 0;
 }
 
-.photos {
-	float: left;
-	position: fixed;
-}
-
 .photoDescription {
 	margin: 0;
 }
 
-.prompt {
-	font-size: 10;
+.subredditButton {
+	border-radius: 5px;
+	background-color: #f0d264;
+	display: inline-block;
+	position: relative;
+	border: 0;
+  	padding: 8px 18px;
+  	margin: 10px;  
+  	font-size: 14px;
+	text-align: center;
+	color: black;
 }
 
-.subredditButton {
-	display: inline-block;
-	width: 45px;
+.subredditButton:focus {
+	outline: none;
+}
+
+.subredditButton:active {
+	background-color: #EDA400;
+	outline: none;
 }
 
 .subredditHeader {
