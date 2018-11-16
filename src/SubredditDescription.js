@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import './SubredditDescription.css';
 
 function SubredditDescription({ subreddit }) {
-	console.log(subreddit);
-
 	switch(subreddit) {
 		case 'blep': {
 			return(<p className="description">"blep" (noun) - cats with their tongue out</p>);
@@ -18,6 +16,10 @@ function SubredditDescription({ subreddit }) {
 		default:
 			return(<p>no subreddit</p>);
 	}
+}
+
+SubredditDescription.propTypes = {
+	subreddit: PropTypes.string.isRequired
 }
 
 export default SubredditDescription;

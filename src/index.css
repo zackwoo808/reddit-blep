@@ -16,6 +16,10 @@ html {
 	padding: 0;
 }
 
+.photo {
+	border-radius: 10px;
+}
+
 .photoDescription {
 	margin: 0;
 }
@@ -44,7 +48,15 @@ html {
 
 .subredditHeader {
 	display: inline-block;
+	border-bottom: 10px solid yellow;
+	max-width: 150px;
+}
+
+.subredditHeaderChar {
+	display: inline-block;
 	color: yellow;
 }
+
+
 
 

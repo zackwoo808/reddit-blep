@@ -25,11 +25,22 @@ class Reddit extends React.Component {
   };
 
   handleClick(subreddit) {
+    const CancelToken = axios.CancelToken;
+    const source = CancelToken.source();
+
+
     if (subreddit) {
-      axios.get(`https://www.reddit.com/r/${subreddit}.json`).then(res => {
-        const posts = res.data.data.children.map(obj => obj.data);
-        this.setState({ posts });
+      axios.get(`https://www.reddit.com/r/${subreddit}.json`, {
+        cancelToken: source.token
+      }).then(res => {
+          const posts = res.data.data.children.map(obj => obj.data);
+          this.setState({ posts });
       });
+      // .catch(function (thrown) {
+      //   if (axios.isCancel(thrown)) {
+      //     console.log('Request canceled', thrown.message);
+      //   }
+      // });
       this.setState({
         currentSubreddit: subreddit
       });
@@ -40,8 +51,8 @@ class Reddit extends React.Component {
     return (
       <div className="App">
         <div>
-          <h1>
-            /r/bl<div className='subredditHeader'>{this.state.currentSubreddit.charAt(2)}</div>p
+          <h1 className='subredditHeader'>
+            /r/bl<div className='subredditHeaderChar'>{this.state.currentSubreddit.charAt(2)}</div>p
           </h1>
         </div>
         <SubredditDescription subreddit={this.state.currentSubreddit} />

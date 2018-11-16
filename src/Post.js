@@ -10,12 +10,13 @@ function Post({ postUrl, postAuthor, postTitle }) {
 				<img
 					src={
 					 postUrl.includes("https://imgur.com") ?
-					 `https://i.imgur.com/${postUrl.substr(17)}.jpg` :
+					 `https://i.imgur.com/${postUrl.substr(17)}.jpg` : //extract imgur image source
 					 postUrl
 					}
 					height="200"
 					width="200"
 					alt="click link for cuteness"
+					className="photo"
 				/>
 				<br />
 				<a
