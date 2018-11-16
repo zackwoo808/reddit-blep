@@ -3,6 +3,7 @@ import Button from './Button.js';
 import Post from './Post.js';
 import React from "react";
 import ReactDOM from "react-dom";
+import SubredditDescription from './SubredditDescription.js';
 import "./index.css";
 
 // ================================================================
@@ -43,6 +44,7 @@ class Reddit extends React.Component {
             /r/bl<div className='subredditHeader'>{this.state.currentSubreddit.charAt(2)}</div>p
           </h1>
         </div>
+        <SubredditDescription subreddit={this.state.currentSubreddit} />
         <div>
           <Button onClick={() => this.handleClick('blep')} value='blep' />
           <Button onClick={() => this.handleClick('blop')} value='blop' />
