@@ -1,12 +1,18 @@
 html {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: rgb(101, 201, 168);
+  background-color: lightseagreen;
 }
 
-.blep {
+/*.blep {
 	background-color: rgb(101, 201, 168);
-}
+	background-color: lightseagreen;
+}*/
+
+/*.description {
+	border: 1px dashed;
+	padding: 5px;
+}*/
 
 #listItem {
 	list-style: none;
@@ -48,13 +54,13 @@ html {
 
 .subredditHeader {
 	display: inline-block;
-	border-bottom: 10px solid yellow;
+	border-bottom: 10px solid gold;
 	max-width: 150px;
 }
 
 .subredditHeaderChar {
 	display: inline-block;
-	color: yellow;
+	color: gold;
 }
 
 
