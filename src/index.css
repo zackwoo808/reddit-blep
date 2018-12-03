@@ -30,28 +30,6 @@ html {
 	margin: 0;
 }
 
-.subredditButton {
-	border-radius: 5px;
-	background-color: #f0d264;
-	display: inline-block;
-	position: relative;
-	border: 0;
-  	padding: 8px 18px;
-  	margin: 10px;  
-  	font-size: 14px;
-	text-align: center;
-	color: black;
-}
-
-.subredditButton:focus {
-	outline: none;
-}
-
-.subredditButton:active {
-	background-color: #EDA400;
-	outline: none;
-}
-
 .subredditHeader {
 	display: inline-block;
 	border-bottom: 10px solid gold;
