@@ -37,11 +37,6 @@ class Reddit extends React.Component {
           const posts = res.data.data.children.map(obj => obj.data);
           this.setState({ posts });
       });
-      // .catch(function (thrown) {
-      //   if (axios.isCancel(thrown)) {
-      //     console.log('Request canceled', thrown.message);
-      //   }
-      // });
       this.setState({
         currentSubreddit: subreddit
       });
@@ -69,8 +64,8 @@ class Reddit extends React.Component {
                   <img 
                     src={require('./images/woodsy.jpeg')}
                     alt="Woodsy"
-                    height="150"
-                    width="200"
+                    height="300"
+                    width="300"
                     className="photo"
                   />
                   <p className="photoDescription"><b>Blep do not please Woodsy</b></p>

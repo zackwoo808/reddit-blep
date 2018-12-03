@@ -13,8 +13,8 @@ function Post({ postUrl, postAuthor, postTitle }) {
 					 `https://i.imgur.com/${postUrl.substr(17)}.jpg` : //extract imgur image source
 					 postUrl
 					}
-					height="200"
-					width="200"
+					height="300"
+					width="300"
 					alt="click link for cuteness"
 					className="photo"
 				/>
