@@ -68,7 +68,11 @@ class Reddit extends React.Component {
                     width="300"
                     className="photo"
                   />
-                  <p className="photoDescription"><b>Happy Holidays from Woodward</b></p>
+                  <p className="photoDescription">
+                    <b className="happy">Happy </b>
+                    <b className="holidays">Holidays </b>
+                    <b>from Woodward</b>
+                  </p>
               </li>
               : null
             }

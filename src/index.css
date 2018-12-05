@@ -22,6 +22,14 @@ html {
 	padding: 0;
 }
 
+.happy {
+	color: darkred;
+}
+
+.holidays {
+	color: darkgreen;
+}
+
 .photo {
 	border-radius: 10px;
 }
