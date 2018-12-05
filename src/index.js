@@ -62,13 +62,13 @@ class Reddit extends React.Component {
             {this.state.currentSubreddit === "blep" ?
               <li id="listItem">
                   <img 
-                    src={require('./images/woodsy.jpeg')}
+                    src={require('./images/woodward_santa.jpeg')}
                     alt="Woodsy"
                     height="300"
                     width="300"
                     className="photo"
                   />
-                  <p className="photoDescription"><b>Blep do not please Woodsy</b></p>
+                  <p className="photoDescription"><b>Happy Holidays from Woodward</b></p>
               </li>
               : null
             }
