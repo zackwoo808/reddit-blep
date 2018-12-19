@@ -76,6 +76,21 @@ class Reddit extends React.Component {
               </li>
               : null
             }
+            {this.state.currentSubreddit === "blop" ?
+              <li id="listItem">
+                <img
+                  src={require('./images/toby_blop_closeup.jpeg')}
+                  alt="Toby"
+                  height="300"
+                  width="300"
+                  className="photo"
+                />
+                <p className="photoDescription">
+                  <b>Toby, king of blop.</b>
+                </p>
+              </li>
+              : null
+            }
             {this.state.posts.map(post => (
               <li id="listItem" key={post.id}>
                 <Post
