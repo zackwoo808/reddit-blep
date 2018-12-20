@@ -3,12 +3,19 @@ import Button from './Button.js';
 import Post from './Post.js';
 import React from "react";
 import ReactDOM from "react-dom";
+// import {
+//   Router,
+//   Route,
+//   Link,
+//   IndexRoute,
+//   hashHistory,
+//   browserHistory
+// } from 'react-router';
 import SubredditDescription from './SubredditDescription.js';
 import "./index.css";
 import * as serviceWorker from './serviceWorker';
 
-// ================================================================
-
+// ===============================================================
 class Reddit extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +36,6 @@ class Reddit extends React.Component {
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
 
-
     if (subreddit) {
       axios.get(`https://www.reddit.com/r/${subreddit}.json`, {
         cancelToken: source.token
@@ -38,14 +44,21 @@ class Reddit extends React.Component {
           this.setState({ posts });
       });
       this.setState({
-        currentSubreddit: subreddit
+        currentSubreddit: subreddit,
+        function() {
+          console.log(this.state.currentSubreddit);
+        }
       });
     }
   };
-  
+
   render() {
     return (
       <div className="App">
+        {/* <Router history={hashHistory}>
+          <Route path='/' component={Home} />
+          <Route path='/address' component={Address} />
+          </Router> */}
         <div>
           <h1 className='subredditHeader'>
             /r/bl<div className='subredditHeaderChar'>{this.state.currentSubreddit.charAt(2)}</div>p
@@ -61,17 +74,17 @@ class Reddit extends React.Component {
           <ul>
             {this.state.currentSubreddit === "blep" ?
               <li id="listItem">
-                  <img 
-                    src={require('./images/woodward_santa.jpeg')}
+                  <img
+                    src={require('./images/woodward_blep.jpeg')}
                     alt="Woodsy"
                     height="300"
                     width="300"
                     className="photo"
                   />
                   <p className="photoDescription">
-                    <b className="happy">Happy </b>
-                    <b className="holidays">Holidays </b>
-                    <b>from Woodward</b>
+                    {/* <b className="happy">Happy </b>
+                    <b className="holidays">Holidays </b> */}
+                    <b>Woodward, king of blep.</b>
                   </p>
               </li>
               : null
@@ -114,4 +127,4 @@ ReactDOM.render(<Reddit />, document.getElementById("root"));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.register();
+// serviceWorker.register();
